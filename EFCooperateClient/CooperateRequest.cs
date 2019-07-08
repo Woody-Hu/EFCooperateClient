@@ -10,13 +10,16 @@ namespace EFCooperateClient
 
         public TimeSpan AliveTimeSpan { get; }
 
+        public TimeSpan QuestionableTimeSpan { get; }
+
         public int MaxGetCount { get; }
 
-        public CooperateRequest(ISet<string> ids, TimeSpan aliveTimeSpan, int maxGetCount)
+        public CooperateRequest(ISet<string> ids, TimeSpan aliveTimeSpan, TimeSpan questionableTimeSpan, int maxGetCount)
         {
             Ids = ids;
             AliveTimeSpan = aliveTimeSpan;
             MaxGetCount = maxGetCount;
+            QuestionableTimeSpan = questionableTimeSpan;
         }
     }
 }

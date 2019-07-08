@@ -57,7 +57,7 @@ namespace EFCooperateClient
             {
                 var expireKeyValuePair = ExpireKeyValuePair;
                 var now = DateTime.UtcNow;
-                if (!expireKeyValuePair.Key || ExpireUtcDateTime >= now)
+                if (!expireKeyValuePair.Key || now >= expireKeyValuePair.Value)
                 {
                     return CooperateState.NotGet;
                 }
